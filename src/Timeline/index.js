@@ -5,7 +5,8 @@ const StyledTimeline = styled.div`
   width: 100%;
   padding: 16px;
   overflow: hidden;
-  background-color: #F9F9F9;
+  background-color: ${({ theme }) => theme.backgroundBase || "#f9f9f9"};
+  color: ${({ theme }) => theme.textColorBase || "#222"};
   h2 {
     font-size: 16px;
     margin-bottom: 16px;
@@ -38,7 +39,7 @@ const StyledTimeline = styled.div`
           padding-top: 8px;
           display: block;
           padding-right: 24px;
-          color: ${({ theme }) => theme.textColorBase || "#222"}
+          color: ${({ theme }) => theme.textColorBase || "#222"};
         }
       }
     }
@@ -46,7 +47,7 @@ const StyledTimeline = styled.div`
 `
 
 
-export default function Timeline({ filterValue, ...props }) {
+export default function Timeline({ filterValue, theme, ...props }) {
   const playlistsNames = Object.keys(props.playlists);
 
   // Statement
@@ -54,7 +55,7 @@ export default function Timeline({ filterValue, ...props }) {
   // o map transforma um dado do array en alguma coisa que será retornada ao front, diferente do forEach
 
   return (
-    <StyledTimeline>
+    <StyledTimeline theme={theme}>
       {playlistsNames.map(playlistName => {
         const videos = props.playlists[playlistName];
         return (

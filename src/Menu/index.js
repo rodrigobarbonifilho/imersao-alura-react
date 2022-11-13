@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import DarkModeSwitch from "./components/DarkModeSwitch";
 import Search from "./components/Search"
 
 const StyledMenu = styled.header`
@@ -26,15 +27,16 @@ const StyledMenu = styled.header`
     z-index: 999;
 `;
 
-export default function Menu({ filterValue, setFilterValue }) {
+export default function Menu({ filterValue, setFilterValue, preferTheme, setPreferTheme, theme }) {
   const filter = "Frost"
 
   return (
-    <StyledMenu>
+    <StyledMenu theme={theme}>
       <div>
         <Logo />
       </div>
-      <Search filterValue={filterValue} setFilterValue={setFilterValue} />
+      <Search filterValue={filterValue} setFilterValue={setFilterValue} theme={theme} />
+      <DarkModeSwitch preferTheme={preferTheme} setPreferTheme={setPreferTheme} />
     </StyledMenu>
   )
 }

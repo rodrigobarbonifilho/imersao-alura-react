@@ -9,6 +9,7 @@ const StyledSearch = styled.div`
   width: 100%;
   border-radius: 2px;
   overflow: hidden;
+  background-color: ${({ theme }) => theme.backgroundLevel1};
   
   input {
     width: 80%;
@@ -35,12 +36,12 @@ const StyledSearch = styled.div`
   }
 `;
 
-export default function Search({ filterValue, setFilterValue }) {
+export default function Search({ filterValue, setFilterValue, theme }) {
   const searchValue = filterValue;
   const setSearchValue = setFilterValue
 
   return (
-    <StyledSearch>
+    <StyledSearch theme={theme}>
       <input type="text" onChange={(e) => setSearchValue(e.target.value)} value={searchValue} />
       <button>
         🔎
