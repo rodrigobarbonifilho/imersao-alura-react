@@ -12,9 +12,9 @@ const StyledBanner = styled.div`
 `
 
 export default function Banner(props) {
-    return (
-        <StyledBanner>
-            <img src={props.image} />
-        </StyledBanner>
-    )
+  return (
+    <StyledBanner>
+      <img src={props.image} />
+    </StyledBanner>
+  )
 }
