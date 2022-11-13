@@ -16,7 +16,7 @@ function HomePage() {
 
   return (
     <>
-      <CSSReset />
+      <CSSReset theme={theme} />
       <div style={estilosHomePage}>
         <Menu filterValue={filterValue} setFilterValue={setFilterValue} preferTheme={preferTheme} setPreferTheme={setPreferTheme} theme={theme} />
         <Header bg={config.bg} github={config.github} name={config.name} job={config.job} theme={theme} />

@@ -40,6 +40,17 @@ export const CSSReset = createGlobalStyle`
         }
     }
     ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
         opacity: 0;
+        &:hover {
+          opacity: .5;
+        }
+        background-color: ${({ theme }) => theme.backgroundBase};
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.borderBase};
+      border: 1px solid ${({ theme }) => theme.backgroundBase};
+      border-radius: 12px;
     }
 `;

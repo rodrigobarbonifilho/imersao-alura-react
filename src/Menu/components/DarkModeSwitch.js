@@ -5,7 +5,8 @@ const StyledDarkModeSwitch = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-content: center;
-  width: 50px;
+  max-width: 50px;
+  width: 20%;
   height: 26px;
   border-radius: 17px;
   background-color: #333;
