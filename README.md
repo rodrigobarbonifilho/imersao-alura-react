@@ -1,3 +1,3 @@
-https://img.shields.io/github/license/rodrigobarbonifilho/imersao-alura-react?style=for-the-badge
+![https://img.shields.io/github/license/rodrigobarbonifilho/imersao-alura-react?style=for-the-badge]
 
 # Imersão Alura de React.js
