@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Search from "./components/Search"
 
 const StyledMenu = styled.header`
     display: flex;
@@ -25,12 +26,15 @@ const StyledMenu = styled.header`
     z-index: 999;
 `;
 
-export default function Menu() {
+export default function Menu({ filterValue, setFilterValue }) {
+  const filter = "Frost"
+
   return (
     <StyledMenu>
       <div>
         <Logo />
       </div>
+      <Search filterValue={filterValue} setFilterValue={setFilterValue} />
     </StyledMenu>
   )
 }
