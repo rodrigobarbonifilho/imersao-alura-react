@@ -47,7 +47,7 @@ const StyledTimeline = styled.div`
 `
 
 
-export default function Timeline({ filterValue, theme, ...props }) {
+export default function Timeline({ filterValue, ...props }) {
   const playlistsNames = Object.keys(props.playlists);
 
   // Statement
@@ -55,7 +55,7 @@ export default function Timeline({ filterValue, theme, ...props }) {
   // o map transforma um dado do array en alguma coisa que será retornada ao front, diferente do forEach
 
   return (
-    <StyledTimeline theme={theme}>
+    <StyledTimeline>
       {playlistsNames.map(playlistName => {
         const videos = props.playlists[playlistName];
         return (

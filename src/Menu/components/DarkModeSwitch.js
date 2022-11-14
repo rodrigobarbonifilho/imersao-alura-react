@@ -1,49 +1,61 @@
+import React from "react";
 import styled from "styled-components"
+import { colorModeContext } from "../../components/ColorMode";
 
 const StyledDarkModeSwitch = styled.div`
   position: relative;
   display: flex;
-  justify-content: space-evenly;
-  align-content: center;
-  max-width: 50px;
-  width: 20%;
-  height: 26px;
-  border-radius: 17px;
+  justify-content: space-around;
+  font-size: 12px;
+  width: 50px;
+  height: 25px;
+  padding: 3px;
+  border: 0;
+  border-radius: 10000px;
   background-color: #333;
-  transition: .3s ease-in-out¨;
-  cursor: pointer;
-
-  div {
-    display: flex;
+  label {
+    width: 50px;
+  }
+  span {
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 4px;
-    width: 16px;
-    height: 100%;
+    width: 20px;
+    height: 20px;
   }
-  
-  .slider {
+  label::before {
     content: "";
     position: absolute;
-    top: 1px;
-    left: ${({ preferTheme }) => preferTheme === "light" ? "2%" : "50%"};
-    width: calc(50% - 1px);
-    height: calc(100% - 2px);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid #333;
+    width: 24px;
+    height: 24px;
     border-radius: 100%;
-    background: #fff;
-    align-items: center;
-    justify-items: center;
-    transition: .3s ease-in-out;
-    z-index: 999;
+    transition: .3s;
+    cursor: pointer;
+    background-color: #fafafa;
   }
+  input[type="checkbox"] { display: none; }
+  input[type="checkbox"]:checked + label::before { transform: translateX(100%); }
 `;
 
-export default function DarkModeSwitch({ preferTheme, setPreferTheme }) {
+export default function DarkModeSwitch() {
+  const contexto = React.useContext(colorModeContext)
+
   return (
-    <StyledDarkModeSwitch preferTheme={preferTheme} onClickCapture={() => setPreferTheme(preferTheme === "light" ? "dark" : "light")}>
-      <div className="slider"></div>
-      <div>🌙</div>
-      <div>☀️</div>
+    <StyledDarkModeSwitch>
+      <input id="darkmode" type="checkbox" onChange={() => {
+        contexto.toggleMode();
+      }} />
+      <label
+        htmlFor="darkmode"
+        className="darkmode-switch"
+      >
+        <span>🌙</span>
+        <span>☀️</span>
+      </label>
     </StyledDarkModeSwitch>
   );
 }

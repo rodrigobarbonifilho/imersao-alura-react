@@ -19,9 +19,9 @@ const StyledHeader = styled.div`
     }
 `;
 
-export default function Header({ bg, github, name, job, theme }) {
+export default function Header({ bg, github, name, job }) {
   return (
-    <StyledHeader theme={theme}>
+    <StyledHeader>
       <StyledBanner bg={bg} />
       <section className="user-info">
         <img className="profile-img" src={`https://github.com/${github}.png`} />
