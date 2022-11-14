@@ -27,16 +27,16 @@ const StyledMenu = styled.header`
     z-index: 999;
 `;
 
-export default function Menu({ filterValue, setFilterValue, preferTheme, setPreferTheme, theme }) {
+export default function Menu({ filterValue, setFilterValue }) {
   const filter = "Frost"
 
   return (
-    <StyledMenu theme={theme}>
+    <StyledMenu >
       <div>
         <Logo />
       </div>
-      <Search filterValue={filterValue} setFilterValue={setFilterValue} theme={theme} />
-      <DarkModeSwitch preferTheme={preferTheme} setPreferTheme={setPreferTheme} />
+      <Search filterValue={filterValue} setFilterValue={setFilterValue} />
+      <DarkModeSwitch />
     </StyledMenu>
   )
 }

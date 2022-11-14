@@ -36,12 +36,12 @@ const StyledSearch = styled.div`
   }
 `;
 
-export default function Search({ filterValue, setFilterValue, theme }) {
+export default function Search({ filterValue, setFilterValue }) {
   const searchValue = filterValue;
   const setSearchValue = setFilterValue
 
   return (
-    <StyledSearch theme={theme}>
+    <StyledSearch>
       <input type="text" onChange={(e) => setSearchValue(e.target.value)} value={searchValue} />
       <button>
         🔎
