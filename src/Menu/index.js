@@ -24,7 +24,7 @@ const StyledMenu = styled.header`
             fill: ${({ theme }) => theme.textColorBase || "#222222"};
         }
     }
-    z-index: 999;
+    z-index: 98;
 `;
 
 export default function Menu({ filterValue, setFilterValue }) {

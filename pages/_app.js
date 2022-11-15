@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components";
 import { CSSReset } from "../src/components/CSSReset";
 import config from "../config.json";
 import ColorModeProvider, { colorModeContext } from "../src/components/ColorMode";
+import RegisterVideo from "../src/components/RegisterVideo"
 
 const themeActive = config.theme;
 
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={themeActive[context.mode]}>
       <CSSReset />
       <Component {...pageProps} />
+      <RegisterVideo />
     </ThemeProvider>
   )
 }
