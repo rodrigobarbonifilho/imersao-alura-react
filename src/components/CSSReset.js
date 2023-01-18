@@ -46,7 +46,7 @@ export const CSSReset = createGlobalStyle`
         height: 10px;
         opacity: 0;
         &:hover {
-          opacity: .5;
+          opacity: .5;  
         }
         background-color: ${({ theme }) => theme.backgroundBase};
     }

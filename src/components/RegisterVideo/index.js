@@ -1,5 +1,6 @@
 import { StyledRegisterVideo } from "./styles";
 import React from "react";
+import { createClient } from "@supabase/supabase-js"
 
 /*
 ## Desafios
@@ -61,6 +62,11 @@ export default function RegisterVideo() {
     initialValue: { title: "Frost punk", url: "https://youtube...", thumbnail: "" }
   });
   const [visibleForm, setVisibleForm] = React.useState(true);
+
+  const PROJECT_URL = "https://tlpfcxrqtihbyyfdpfmr.supabase.co";
+  const PUBLIC_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRscGZjeHJxdGloYnl5ZmRwZm1yIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Njg0Nzg4OTQsImV4cCI6MTk4NDA1NDg5NH0.pRwvcCnoGH_GhmAOasZPcMkXHoooa40Al7IIljsl5SQ"
+  const supabase = createClient(PROJECT_URL, PUBLIC_KEY)
+
   /*
   ##O que precisamos para o form funcionar?
   - pegar os dados
@@ -85,6 +91,9 @@ export default function RegisterVideo() {
         ? (
           <form onSubmit={(e) => {
             e.preventDefault();
+
+            supabase.from("videos")
+
             setVisibleForm(false);
             formCadastro.clearForm()
           }}>
